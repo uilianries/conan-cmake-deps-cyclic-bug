@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.15)
+project(PackageTest CXX)
+
+if (USE_PKG_CONFIG)
+    include(FindPkgConfig)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(foo REQUIRED foo)
+
+    add_executable(example src/example.cpp)
+    target_link_libraries(example ${foo_LIBRARIES})
+    target_include_directories(example PUBLIC ${foo_INCLUDE_DIRS})
+    target_link_directories(example PUBLIC ${foo_LIBRARY_DIRS})
+    target_compile_options(example PUBLIC ${foo_CFLAGS})
+else()
+    find_package(foo REQUIRED CONFIG)
+    add_executable(example src/example.cpp)
+    target_link_libraries(example foo::foo)
+endif()
