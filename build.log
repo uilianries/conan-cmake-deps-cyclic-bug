@@ -1,0 +1,374 @@
+****** BUILD PROJECT USING CMAKE DEPS *********
+
+======== Exporting recipe to the cache ========
+foo/0.1.0: Exporting package recipe: /tmp/foobar/conanfile.py
+foo/0.1.0: Copied 1 '.py' file: conanfile.py
+foo/0.1.0: Copied 1 '.txt' file: CMakeLists.txt
+foo/0.1.0: Copied 1 '.cpp' file: foo.cpp
+foo/0.1.0: Copied 1 '.h' file: foo.h
+foo/0.1.0: Exported to cache folder: /home/uilian/.conan2/p/foo407ad33279ed2/e
+foo/0.1.0: Exported: foo/0.1.0#b0936ed95f515517e9201e3eabebf583 (2024-08-06 13:21:49 UTC)
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=11
+os=Linux
+[conf]
+tools.build:verbosity=verbose
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.compilation:verbosity=verbose
+tools.system.package_manager:mode=install
+tools.system.package_manager:sudo=yes
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=11
+os=Linux
+[conf]
+tools.build:verbosity=verbose
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.compilation:verbosity=verbose
+tools.system.package_manager:mode=install
+tools.system.package_manager:sudo=yes
+
+
+======== Computing dependency graph ========
+Graph root
+    cli
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583 - Cache
+
+======== Computing necessary packages ========
+foo/0.1.0: Forced build from source
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe - Build
+
+======== Installing packages ========
+
+-------- Installing package foo/0.1.0 (1 of 1) --------
+foo/0.1.0: Building from source
+foo/0.1.0: Package foo/0.1.0:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe
+foo/0.1.0: Copying sources to build folder
+foo/0.1.0: Building your package in /home/uilian/.conan2/p/b/foofd274f076c63b/b
+foo/0.1.0: Writing generators to /home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release/generators
+foo/0.1.0: Generator 'CMakeToolchain' calling 'generate()'
+foo/0.1.0: CMakeToolchain generated: conan_toolchain.cmake
+foo/0.1.0: CMakeToolchain generated: /home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release/generators/CMakePresets.json
+foo/0.1.0: CMakeToolchain generated: /home/uilian/.conan2/p/b/foofd274f076c63b/b/CMakeUserPresets.json
+foo/0.1.0: Generating aggregated env files
+foo/0.1.0: Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+foo/0.1.0: Calling build()
+foo/0.1.0: Running CMake.configure()
+foo/0.1.0: RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="/home/uilian/.conan2/p/b/foofd274f076c63b/p" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Release" "/home/uilian/.conan2/p/b/foofd274f076c63b/b" --loglevel=VERBOSE
+-- Using Conan toolchain: /home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release/generators/conan_toolchain.cmake
+-- Conan toolchain: Setting CMAKE_POSITION_INDEPENDENT_CODE=ON (options.fPIC)
+-- Conan toolchain: Defining architecture flag: -m64
+-- Conan toolchain: C++ Standard 17 with extensions ON
+-- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release
+
+foo/0.1.0: Running CMake.build()
+foo/0.1.0: RUN: cmake --build "/home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release" --verbose -- -j12
+[1/2] /usr/bin/c++  -I/home/uilian/.conan2/p/b/foofd274f076c63b/b/include -m64 -O3 -DNDEBUG -fPIC -std=gnu++17 -MD -MT CMakeFiles/foo.dir/src/foo.cpp.o -MF CMakeFiles/foo.dir/src/foo.cpp.o.d -o CMakeFiles/foo.dir/src/foo.cpp.o -c /home/uilian/.conan2/p/b/foofd274f076c63b/b/src/foo.cpp
+[2/2] : && /usr/bin/cmake -E rm -f libfoo.a && /usr/bin/ar qc libfoo.a  CMakeFiles/foo.dir/src/foo.cpp.o && /usr/bin/ranlib libfoo.a && :
+
+foo/0.1.0: Package '8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe' built
+foo/0.1.0: Build folder /home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release
+foo/0.1.0: Generating the package
+foo/0.1.0: Packaging in folder /home/uilian/.conan2/p/b/foofd274f076c63b/p
+foo/0.1.0: Calling package()
+foo/0.1.0: Running CMake.install()
+foo/0.1.0: RUN: cmake --install "/home/uilian/.conan2/p/b/foofd274f076c63b/b/build/Release" --prefix "/home/uilian/.conan2/p/b/foofd274f076c63b/p" --verbose
+-- Install configuration: "Release"
+-- Installing: /home/uilian/.conan2/p/b/foofd274f076c63b/p/lib/libfoo.a
+-- Installing: /home/uilian/.conan2/p/b/foofd274f076c63b/p/include/foo.h
+
+foo/0.1.0: package(): Packaged 3 '.a' files: libfoo.a, libbaz.a, libcore.a
+foo/0.1.0: package(): Packaged 1 '.h' file: foo.h
+foo/0.1.0: Created package revision 0c4c9ad127dc367260b5f0659468800f
+foo/0.1.0: Package '8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe' created
+foo/0.1.0: Full package reference: foo/0.1.0#b0936ed95f515517e9201e3eabebf583:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe#0c4c9ad127dc367260b5f0659468800f
+foo/0.1.0: Package folder /home/uilian/.conan2/p/b/foo7229e6f52d733/p
+
+======== Launching test_package ========
+
+======== Computing dependency graph ========
+Graph root
+    foo/0.1.0 (test package): /tmp/foobar/test_package/conanfile.py
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583 - Cache
+
+======== Computing necessary packages ========
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe#0c4c9ad127dc367260b5f0659468800f - Cache
+
+======== Installing packages ========
+foo/0.1.0: Already installed! (1 of 1)
+
+======== Testing the package ========
+Removing previously existing 'test_package' build folder: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release
+foo/0.1.0 (test package): Test package build: build/gcc-11-x86_64-gnu17-release
+foo/0.1.0 (test package): Test package build folder: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release
+foo/0.1.0 (test package): Writing generators to /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/generators
+foo/0.1.0 (test package): Generator 'CMakeDeps' calling 'generate()'
+foo/0.1.0 (test package): CMakeDeps necessary find_package() and targets for your CMakeLists.txt
+    find_package(foo)
+    target_link_libraries(... foo::foo)
+foo/0.1.0 (test package): Generator 'CMakeToolchain' calling 'generate()'
+foo/0.1.0 (test package): CMakeToolchain generated: conan_toolchain.cmake
+foo/0.1.0 (test package): CMakeToolchain generated: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/generators/CMakePresets.json
+foo/0.1.0 (test package): CMakeToolchain generated: /tmp/foobar/test_package/CMakeUserPresets.json
+foo/0.1.0 (test package): Generator 'PkgConfigDeps' calling 'generate()'
+foo/0.1.0 (test package): Generating aggregated env files
+foo/0.1.0 (test package): Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+
+======== Testing the package: Building ========
+foo/0.1.0 (test package): Calling build()
+foo/0.1.0 (test package): Running CMake.configure()
+foo/0.1.0 (test package): RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="/tmp/foobar/test_package" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Release" "/tmp/foobar/test_package" --loglevel=VERBOSE
+-- Using Conan toolchain: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/generators/conan_toolchain.cmake
+-- Conan toolchain: Defining architecture flag: -m64
+-- Conan toolchain: C++ Standard 17 with extensions ON
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Conan: Target declared 'foo::foo'
+-- Conan: Library foo found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Conan: Library core found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libcore.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libcore.a
+-- Conan: Library baz found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libbaz.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libbaz.a
+-- Conan: Library foo found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release
+
+foo/0.1.0 (test package): Running CMake.build()
+foo/0.1.0 (test package): RUN: cmake --build "/tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release" --verbose -- -j12
+[1/2] /usr/bin/c++  -isystem /home/uilian/.conan2/p/b/foo7229e6f52d733/p/include -m64 -O3 -DNDEBUG -std=gnu++17 -MD -MT CMakeFiles/example.dir/src/example.cpp.o -MF CMakeFiles/example.dir/src/example.cpp.o.d -o CMakeFiles/example.dir/src/example.cpp.o -c /tmp/foobar/test_package/src/example.cpp
+[2/2] : && /usr/bin/c++ -m64 -O3 -DNDEBUG -m64 CMakeFiles/example.dir/src/example.cpp.o -o example -L/home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib -Wl,-rpath,/home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib  /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a  /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libcore.a  /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libbaz.a && :
+
+
+======== Testing the package: Executing test ========
+foo/0.1.0 (test package): Running test()
+foo/0.1.0 (test package): RUN: ./example
+foo/0.1.0: Hello World Release!
+  foo/0.1.0: __x86_64__ defined
+  foo/0.1.0: _GLIBCXX_USE_CXX11_ABI 1
+  foo/0.1.0: __cplusplus201703
+  foo/0.1.0: __GNUC__11
+  foo/0.1.0: __GNUC_MINOR__4
+foo/0.1.0 test_package
+
+
+===================================================================
+****** BUILD PROJECT USING PKG CONFIG DEPS *********
+
+======== Exporting recipe to the cache ========
+foo/0.1.0: Exporting package recipe: /tmp/foobar/conanfile.py
+foo/0.1.0: Copied 1 '.py' file: conanfile.py
+foo/0.1.0: Copied 1 '.txt' file: CMakeLists.txt
+foo/0.1.0: Copied 1 '.cpp' file: foo.cpp
+foo/0.1.0: Copied 1 '.h' file: foo.h
+foo/0.1.0: Exported to cache folder: /home/uilian/.conan2/p/foo407ad33279ed2/e
+foo/0.1.0: Exported: foo/0.1.0#b0936ed95f515517e9201e3eabebf583 (2024-08-06 13:21:51 UTC)
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=11
+os=Linux
+[conf]
+tools.build:verbosity=verbose
+tools.cmake.cmaketoolchain:extra_variables={'USE_PKG_CONFIG': 'OFF'}
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.compilation:verbosity=verbose
+tools.system.package_manager:mode=install
+tools.system.package_manager:sudo=yes
+
+Profile build:
+[settings]
+arch=x86_64
+build_type=Release
+compiler=gcc
+compiler.cppstd=gnu17
+compiler.libcxx=libstdc++11
+compiler.version=11
+os=Linux
+[conf]
+tools.build:verbosity=verbose
+tools.cmake.cmaketoolchain:generator=Ninja
+tools.compilation:verbosity=verbose
+tools.system.package_manager:mode=install
+tools.system.package_manager:sudo=yes
+
+
+======== Computing dependency graph ========
+Graph root
+    cli
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583 - Cache
+
+======== Computing necessary packages ========
+foo/0.1.0: Forced build from source
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe - Build
+
+======== Installing packages ========
+
+-------- Installing package foo/0.1.0 (1 of 1) --------
+foo/0.1.0: Building from source
+foo/0.1.0: Package foo/0.1.0:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe
+foo/0.1.0: Copying sources to build folder
+foo/0.1.0: Building your package in /home/uilian/.conan2/p/b/food7de4e42a3dbf/b
+foo/0.1.0: Writing generators to /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release/generators
+foo/0.1.0: Generator 'CMakeToolchain' calling 'generate()'
+foo/0.1.0: CMakeToolchain generated: conan_toolchain.cmake
+foo/0.1.0: CMakeToolchain generated: /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release/generators/CMakePresets.json
+foo/0.1.0: CMakeToolchain generated: /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/CMakeUserPresets.json
+foo/0.1.0: Generating aggregated env files
+foo/0.1.0: Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+foo/0.1.0: Calling build()
+foo/0.1.0: Running CMake.configure()
+foo/0.1.0: RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="/home/uilian/.conan2/p/b/food7de4e42a3dbf/p" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Release" "/home/uilian/.conan2/p/b/food7de4e42a3dbf/b" --loglevel=VERBOSE
+-- Using Conan toolchain: /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release/generators/conan_toolchain.cmake
+-- Conan toolchain: Setting CMAKE_POSITION_INDEPENDENT_CODE=ON (options.fPIC)
+-- Conan toolchain: Defining architecture flag: -m64
+-- Conan toolchain: C++ Standard 17 with extensions ON
+-- Conan toolchain: Setting BUILD_SHARED_LIBS = OFF
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release
+
+foo/0.1.0: Running CMake.build()
+foo/0.1.0: RUN: cmake --build "/home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release" --verbose -- -j12
+[1/2] /usr/bin/c++  -I/home/uilian/.conan2/p/b/food7de4e42a3dbf/b/include -m64 -O3 -DNDEBUG -fPIC -std=gnu++17 -MD -MT CMakeFiles/foo.dir/src/foo.cpp.o -MF CMakeFiles/foo.dir/src/foo.cpp.o.d -o CMakeFiles/foo.dir/src/foo.cpp.o -c /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/src/foo.cpp
+[2/2] : && /usr/bin/cmake -E rm -f libfoo.a && /usr/bin/ar qc libfoo.a  CMakeFiles/foo.dir/src/foo.cpp.o && /usr/bin/ranlib libfoo.a && :
+
+foo/0.1.0: Package '8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe' built
+foo/0.1.0: Build folder /home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release
+foo/0.1.0: Generating the package
+foo/0.1.0: Packaging in folder /home/uilian/.conan2/p/b/food7de4e42a3dbf/p
+foo/0.1.0: Calling package()
+foo/0.1.0: Running CMake.install()
+foo/0.1.0: RUN: cmake --install "/home/uilian/.conan2/p/b/food7de4e42a3dbf/b/build/Release" --prefix "/home/uilian/.conan2/p/b/food7de4e42a3dbf/p" --verbose
+-- Install configuration: "Release"
+-- Installing: /home/uilian/.conan2/p/b/food7de4e42a3dbf/p/lib/libfoo.a
+-- Installing: /home/uilian/.conan2/p/b/food7de4e42a3dbf/p/include/foo.h
+
+foo/0.1.0: package(): Packaged 3 '.a' files: libfoo.a, libbaz.a, libcore.a
+foo/0.1.0: package(): Packaged 1 '.h' file: foo.h
+foo/0.1.0: Created package revision 0c4c9ad127dc367260b5f0659468800f
+foo/0.1.0: Package '8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe' created
+foo/0.1.0: Full package reference: foo/0.1.0#b0936ed95f515517e9201e3eabebf583:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe#0c4c9ad127dc367260b5f0659468800f
+foo/0.1.0: Package folder /home/uilian/.conan2/p/b/foo7229e6f52d733/p
+
+======== Launching test_package ========
+
+======== Computing dependency graph ========
+Graph root
+    foo/0.1.0 (test package): /tmp/foobar/test_package/conanfile.py
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583 - Cache
+
+======== Computing necessary packages ========
+Requirements
+    foo/0.1.0#b0936ed95f515517e9201e3eabebf583:8631cf963dbbb4d7a378a64a6fd1dc57558bc2fe#0c4c9ad127dc367260b5f0659468800f - Cache
+
+======== Installing packages ========
+foo/0.1.0: Already installed! (1 of 1)
+
+======== Testing the package ========
+Removing previously existing 'test_package' build folder: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release
+foo/0.1.0 (test package): Test package build: build/gcc-11-x86_64-gnu17-release
+foo/0.1.0 (test package): Test package build folder: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release
+foo/0.1.0 (test package): Writing generators to /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/generators
+foo/0.1.0 (test package): Generator 'CMakeDeps' calling 'generate()'
+foo/0.1.0 (test package): CMakeDeps necessary find_package() and targets for your CMakeLists.txt
+    find_package(foo)
+    target_link_libraries(... foo::foo)
+foo/0.1.0 (test package): Generator 'CMakeToolchain' calling 'generate()'
+foo/0.1.0 (test package): CMakeToolchain generated: conan_toolchain.cmake
+foo/0.1.0 (test package): CMakeToolchain generated: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/generators/CMakePresets.json
+foo/0.1.0 (test package): CMakeToolchain generated: /tmp/foobar/test_package/CMakeUserPresets.json
+foo/0.1.0 (test package): Generator 'PkgConfigDeps' calling 'generate()'
+foo/0.1.0 (test package): Generating aggregated env files
+foo/0.1.0 (test package): Generated aggregated env files: ['conanbuild.sh', 'conanrun.sh']
+
+======== Testing the package: Building ========
+foo/0.1.0 (test package): Calling build()
+foo/0.1.0 (test package): Running CMake.configure()
+foo/0.1.0 (test package): RUN: cmake -G "Ninja" -DCMAKE_TOOLCHAIN_FILE="generators/conan_toolchain.cmake" -DCMAKE_INSTALL_PREFIX="/tmp/foobar/test_package" -DCMAKE_POLICY_DEFAULT_CMP0091="NEW" -DCMAKE_BUILD_TYPE="Release" "/tmp/foobar/test_package" --loglevel=VERBOSE
+-- Using Conan toolchain: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/generators/conan_toolchain.cmake
+-- Conan toolchain: Defining architecture flag: -m64
+-- Conan toolchain: C++ Standard 17 with extensions ON
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Conan: Target declared 'foo::foo'
+-- Conan: Library foo found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Conan: Library core found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libcore.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libcore.a
+-- Conan: Library baz found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libbaz.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libbaz.a
+-- Conan: Library foo found /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Conan: Found: /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release
+
+foo/0.1.0 (test package): Running CMake.build()
+foo/0.1.0 (test package): RUN: cmake --build "/tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release" --verbose -- -j12
+[1/2] /usr/bin/c++  -isystem /home/uilian/.conan2/p/b/foo7229e6f52d733/p/include -m64 -O3 -DNDEBUG -std=gnu++17 -MD -MT CMakeFiles/example.dir/src/example.cpp.o -MF CMakeFiles/example.dir/src/example.cpp.o.d -o CMakeFiles/example.dir/src/example.cpp.o -c /tmp/foobar/test_package/src/example.cpp
+[2/2] : && /usr/bin/c++ -m64 -O3 -DNDEBUG -m64 CMakeFiles/example.dir/src/example.cpp.o -o example -L/home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib -Wl,-rpath,/home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib  /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libfoo.a  /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libcore.a  /home/uilian/.conan2/p/b/foo7229e6f52d733/p/lib/libbaz.a && :
+
+
+======== Testing the package: Executing test ========
+foo/0.1.0 (test package): Running test()
+foo/0.1.0 (test package): RUN: ./example
+foo/0.1.0: Hello World Release!
+  foo/0.1.0: __x86_64__ defined
+  foo/0.1.0: _GLIBCXX_USE_CXX11_ABI 1
+  foo/0.1.0: __cplusplus201703
+  foo/0.1.0: __GNUC__11
+  foo/0.1.0: __GNUC_MINOR__4
+foo/0.1.0 test_package

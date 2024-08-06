@@ -1,0 +1,38 @@
+{
+    "version": 3,
+    "vendor": {
+        "conan": {}
+    },
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 15,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "conan-gcc-11-x86_64-gnu17-release",
+            "displayName": "'conan-gcc-11-x86_64-gnu17-release' config",
+            "description": "'conan-gcc-11-x86_64-gnu17-release' configure using 'Ninja' generator",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "toolchainFile": "generators/conan_toolchain.cmake",
+            "binaryDir": "/tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "conan-gcc-11-x86_64-gnu17-release",
+            "configurePreset": "conan-gcc-11-x86_64-gnu17-release",
+            "jobs": 12
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "conan-gcc-11-x86_64-gnu17-release",
+            "configurePreset": "conan-gcc-11-x86_64-gnu17-release"
+        }
+    ]
+}

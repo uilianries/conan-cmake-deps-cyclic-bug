@@ -1,0 +1,10 @@
+prefix=/home/uilian/.conan2/p/b/foo7229e6f52d733/p
+libdir=${prefix}/lib
+includedir=${prefix}/include
+bindir=${prefix}/bin
+
+Name: foo
+Description: Conan package: foo
+Version: 0.1.0
+Libs: -L"${libdir}" -lfoo -lcore -lbaz -lfoo
+Cflags: -I"${includedir}"

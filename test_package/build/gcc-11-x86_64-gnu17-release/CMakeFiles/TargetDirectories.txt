@@ -1,0 +1,3 @@
+/tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/CMakeFiles/example.dir
+/tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/CMakeFiles/edit_cache.dir
+/tmp/foobar/test_package/build/gcc-11-x86_64-gnu17-release/CMakeFiles/rebuild_cache.dir
